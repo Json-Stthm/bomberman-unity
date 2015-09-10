@@ -34,7 +34,7 @@ public class PlayerBomb : MonoBehaviour {
 			Physics.IgnoreCollision (bomb.GetComponent<Collider> (), GetComponent<Collider> ());
 			onDroppedBomb = true;
 			droppedBombs.Add(bomb);
-			bomb.GetComponent<Bomb>().Initialize(this, fire_capacity, 2);
+//			bomb.GetComponent<Bomb>().Initialize(this, fire_capacity, 2);
 		}
 	}
 
@@ -46,4 +46,5 @@ public class PlayerBomb : MonoBehaviour {
 		onDroppedBomb = false;
 		Physics.IgnoreCollision (other.gameObject.GetComponent<Collider> (), GetComponent<Collider> (), false);
 	}
+
 }
