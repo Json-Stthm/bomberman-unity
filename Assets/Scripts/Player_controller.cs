@@ -2,8 +2,7 @@
 using System.Collections;
 
 public class Player_controller : MonoBehaviour {
-
-	public int delayBomb = 2;
+	
 	public int maxBomb;
 	public GameObject bombPrefab;
 
@@ -35,7 +34,7 @@ public class Player_controller : MonoBehaviour {
 		if (Input.GetButtonDown ("Fire1") && canDrop && nbBombs < maxBomb) {
 			nbBombs++;
 			GameObject bomb = (GameObject) Instantiate (bombPrefab, transform.position + new Vector3 (0, 0.3f, 0), transform.rotation);
-			bomb.GetComponent<Bomb>().Initialize(gameObject, delayBomb);
+			bomb.GetComponent<Bomb>().Initialize(gameObject);
 		}
 	}
 }

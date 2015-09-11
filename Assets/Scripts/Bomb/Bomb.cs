@@ -2,29 +2,22 @@
 using System.Collections;
 
 public class Bomb : MonoBehaviour {
-	
-	Vector3 bombNormalScale = new Vector3 (0.7F, 0.7F, 0.7F);
-	ParticleSystem explosion;
-	float currentLightTime = 0f;
-	float bombPopDuration = 0.1f;
-	float currentPopTime = 0f;
-	float bombBreathAmplitude = 0.01f;
-	float bombBreathPeriod = 0.1f;
-	float currentBreathTime = 0f;
-	bool initOk = false;
-	bool bombScaled = false;
-	
-	private GameObject dropPlayer;
-
-	public GameObject DropPlayer
-	{
-		get{return dropPlayer;}
-		set{dropPlayer = value;}
-	}
 
 	public GameObject explosionParticle;
 
-	public void Initialize(GameObject player, int explodeDelay){
+	private Vector3 bombNormalScale = new Vector3 (0.7F, 0.7F, 0.7F);
+	private ParticleSystem explosion;
+	private float bombPopDuration = 0.1f;
+	private float currentPopTime = 0f;
+	private float bombBreathAmplitude = 0.01f;
+	private float bombBreathPeriod = 0.1f;
+	private float currentBreathTime = 0f;
+	private bool initOk = false;
+	private bool bombScaled = false;
+	private GameObject dropPlayer;
+	protected float explodeDelay = 2;
+
+	public void Initialize(GameObject player){
 
 		dropPlayer = player;
 		initOk = true;
@@ -67,5 +60,17 @@ public class Bomb : MonoBehaviour {
 		if (dropPlayer) {
 			dropPlayer.GetComponent<Player_controller> ().NbBombs -= 1;
 		}
+	}
+
+	//Getter Setter
+	public GameObject DropPlayer
+	{
+		get{return dropPlayer;}
+		set{dropPlayer = value;}
+	}
+	public float ExplodeDelay
+	{
+		get{return explodeDelay;}
+		set{explodeDelay = value;}
 	}
 }
