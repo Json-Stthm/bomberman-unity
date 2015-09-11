@@ -479,6 +479,7 @@ GameObject:
   - 114: {fileID: 11459974}
   - 114: {fileID: 11499440}
   - 114: {fileID: 11489880}
+  - 114: {fileID: 11433040}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -1242,6 +1243,29 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11433040
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 173580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b2baf6901bb51a48ae9f6cbdd6d7fcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bomb:
+    capacity: 8
+    start_capacity: 1
+    tag: aze
+  fire:
+    capacity: 8
+    start_capacity: 1
+    tag: aze
+  roller:
+    capacity: 8
+    start_capacity: 1
+    tag: aze
 --- !u!114 &11459974
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1265,8 +1289,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98027edac2de81942b145a8d6066e354, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayBomb: 2
-  maxBomb: 2
   bombPrefab: {fileID: 100422, guid: 2622e1c55b7a6c34e82868991a30744a, type: 2}
 --- !u!114 &11499440
 MonoBehaviour:
