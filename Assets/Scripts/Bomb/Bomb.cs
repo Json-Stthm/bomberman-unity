@@ -60,7 +60,7 @@ public class Bomb : MonoBehaviour {
 		// launch particle system
 		GameObject explosionInstance = (GameObject) Instantiate (explosionParticle, transform.position, explosionParticle.transform.rotation);
 		Destroy (gameObject);
-		Destroy (explosionInstance, explosionParticle.GetComponent<ParticleSystem>().duration);
+		Destroy (explosionInstance, explosionParticle.transform.GetChild(0).GetComponent<ParticleSystem>().duration);
 	}
 	void OnDestroy() {
 
