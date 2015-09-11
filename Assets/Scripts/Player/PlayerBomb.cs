@@ -4,8 +4,6 @@ using System.Collections.Generic;
 
 public class PlayerBomb : MonoBehaviour {
 
-	static int max_bombs = 8;
-	//static int max_fire = 8;
 	public int bombs_capacity;
 	public int fire_capacity;
 	public GameObject bombPrefab;

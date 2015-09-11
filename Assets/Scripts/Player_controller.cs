@@ -3,8 +3,6 @@ using System.Collections;
 
 public class Player_controller : MonoBehaviour {
 
-	public int delayBomb = 2;
-	public int maxBomb;
 	public GameObject bombPrefab;
 
 	private bool canDrop = true;
@@ -32,10 +30,10 @@ public class Player_controller : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Input.GetButtonDown ("Fire1") && canDrop && nbBombs < maxBomb) {
+		if (Input.GetButtonDown ("Fire1") && canDrop && nbBombs < GetComponent<Player_inventory>().bomb.Current_capacity) {
 			nbBombs++;
 			GameObject bomb = (GameObject) Instantiate (bombPrefab, transform.position + new Vector3 (0, 0.3f, 0), transform.rotation);
-			bomb.GetComponent<Bomb>().Initialize(gameObject, delayBomb);
+			bomb.GetComponent<Bomb>().Initialize(gameObject);
 		}
 	}
 }
