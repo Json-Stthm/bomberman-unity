@@ -12583,7 +12583,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 132312}
-  m_LocalRotation: {x: -.643580317, y: -.150465831, z: .690934896, w: -.292871237}
+  m_LocalRotation: {x: -.643580258, y: -.150465816, z: .690934837, w: -.292871207}
   m_LocalPosition: {x: -.00380913238, y: .1470038, z: -.0244224742}
   m_LocalScale: {x: 1, y: .999999881, z: .999999881}
   m_Children:
@@ -12709,7 +12709,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 107200}
-  m_LocalRotation: {x: .639253378, y: -.639251173, z: .302250296, w: .302254826}
+  m_LocalRotation: {x: .639253318, y: -.639251113, z: .302250266, w: .302254796}
   m_LocalPosition: {x: .044982329, y: .0699351951, z: .0806901306}
   m_LocalScale: {x: 1, y: .999999762, z: 1}
   m_Children:
@@ -14274,6 +14274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bombPrefab: {fileID: 191268, guid: b68bc3ad5bda2d947b4e2381765b2b0f, type: 2}
+  deathPrefab: {fileID: 160478, guid: af31d4c4953e5c54ead0bc9bc7950bee, type: 2}
   speed: 3
 --- !u!114 &11487064
 MonoBehaviour:
@@ -15099,6 +15100,10 @@ Prefab:
       propertyPath: player_inventory.Array.data[3].capacity
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: deathPrefab
+      value: 
+      objectReference: {fileID: 160478, guid: af31d4c4953e5c54ead0bc9bc7950bee, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 141020}
