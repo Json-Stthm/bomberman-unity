@@ -4,15 +4,17 @@ using System.Collections;
 public class Player_controller : MonoBehaviour {
 
     //Player_controller variables
-	public GameObject bombPrefab;
-	private bool canDrop = true;
-	private int nbBombs = 0;
-	private int playerID = 0;
+	public  GameObject  bombPrefab;
+    public  GameObject  deathPrefab;
+	private bool        canDrop = true;
+	private int         nbBombs = 0;
+	private int         playerID = 1;
+    private bool        death = false;
     //Player_movement varaiables
-    public float speed = 3f;
-    Vector3 movement;
-    Animator anim;
-    Rigidbody playerRigidbody;  
+    public  float       speed = 3f;
+    private Vector3     movement;
+    private Animator    anim;
+    private Rigidbody   playerRigidbody;  
 
     /*********************************************/
     /************** PLAYER MOVEMENT **************/
@@ -62,12 +64,28 @@ public class Player_controller : MonoBehaviour {
     /*********************************************/
 	void Update () {
 
-		if (Input.GetButtonDown ("Fire1_P" + playerID.ToString()) && canDrop && nbBombs < GetComponent<Player_inventory>().bomb.Current_capacity) {
+		if (!death && Input.GetButtonDown ("Fire1_P" + playerID.ToString()) && canDrop && nbBombs < GetComponent<Player_inventory>().Get_current_capacity("inventory_bomb")) {
 			nbBombs++;
 			GameObject bomb = (GameObject) Instantiate (bombPrefab, transform.position + new Vector3 (0, 0.3f, 0), transform.rotation);
 			bomb.GetComponent<Bomb>().Initialize(gameObject);
 		}
 	}
+    /*********************************************/
+    /**************** SETTER GETTER **************/
+    /*********************************************/
+    public void Death()
+    {
+        death = true;
+        GameObject death_obj = (GameObject) Instantiate(deathPrefab, transform.position + new Vector3(0, 2.5f, 0), Quaternion.identity);
+        death_obj.transform.SetParent(transform);
+        Invoke("Repop", 0.5f);
+    }
+
+    private void Repop() {
+
+       transform.position = GameObject.Find("Spawn" + playerID).transform.position;
+    }
+
     public bool CanDrop
     {
         get { return canDrop; }

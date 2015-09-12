@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89c56bf80d942bb42aefd7be367c8e7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionParticle: {fileID: 180336, guid: d9db659a68072b64994bee577e897bc9, type: 2}
+  explosionParticle: {fileID: 159024, guid: 03fa8835d85a4ae4f8ddc5ad5689c68a, type: 2}
 --- !u!135 &13534962
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -269,7 +269,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: explosionParticle
       value: 
-      objectReference: {fileID: 180336, guid: d9db659a68072b64994bee577e897bc9, type: 2}
+      objectReference: {fileID: 159024, guid: 03fa8835d85a4ae4f8ddc5ad5689c68a, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 191268}
