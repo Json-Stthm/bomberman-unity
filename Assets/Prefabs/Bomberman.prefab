@@ -251,7 +251,6 @@ GameObject:
   - 95: {fileID: 9580686}
   - 54: {fileID: 5453874}
   - 136: {fileID: 13662018}
-  - 114: {fileID: 11435804}
   - 114: {fileID: 11452096}
   - 114: {fileID: 11400084}
   m_Layer: 8
@@ -1265,18 +1264,6 @@ MonoBehaviour:
     capacity: 8
     start_capacity: 1
     tag: inventory_roller
---- !u!114 &11435804
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 136162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60fa5a2186b67c544815b667bb94e1f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
 --- !u!114 &11452096
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1288,8 +1275,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98027edac2de81942b145a8d6066e354, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxBomb: 2
   bombPrefab: {fileID: 191268, guid: b68bc3ad5bda2d947b4e2381765b2b0f, type: 2}
+  speed: 3
 --- !u!136 &13662018
 CapsuleCollider:
   m_ObjectHideFlags: 1

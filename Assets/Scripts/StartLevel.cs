@@ -4,7 +4,10 @@ using System.Collections;
 public class StartLevel : MonoBehaviour {
 
 	// Use this for initialization
-	public void LoadLevel () {
-		Application.LoadLevel (1);
+	void Update () {
+
+        if (Input.GetAxis("Start") != 0) {
+            Application.LoadLevel(1);
+        }
 	}
 }
