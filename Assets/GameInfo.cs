@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class GameInfo : MonoBehaviour {
 
-    private int         nb_players;
+    private int         nb_players = 0;
     private List<int>   playerIDS = new List<int>();
     private bool        end = false;
     private string      end_text;

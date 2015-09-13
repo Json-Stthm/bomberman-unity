@@ -538,7 +538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89fa1ecc571ea554b89a0da06af6eaab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 1288454346}
+  slider: {fileID: 1157041188}
   jauge: {fileID: 1408688381}
   min_value: 2
   max_val: 2
