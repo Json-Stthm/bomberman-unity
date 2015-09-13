@@ -21,28 +21,38 @@ public class Player_inventory : MonoBehaviour {
 			set{current_capacity = value;}
 		}
 	}
-	public Inventory bomb;
-	public Inventory fire;
-	public Inventory roller;
+	public Inventory[] player_inventory;
 	private Dictionary<string, Inventory> inventory_player = new Dictionary<string, Inventory>();
 
 	void Start() {
-		inventory_player.Add(bomb.tag, bomb);
-		inventory_player.Add(fire.tag, fire); 
-		inventory_player.Add(roller.tag, roller); 
+
+        foreach (Inventory item in player_inventory)
+        {
+            inventory_player.Add(item.tag, item);
+        }
 	}
 	void OnTriggerEnter(Collider col) {
 		
-		if (is_inventory(col.tag)) {
+		if (inventory_player.ContainsKey(col.tag)) {
 			if (inventory_player[col.tag].Current_capacity < inventory_player[col.tag].capacity) {
 				inventory_player[col.tag].Current_capacity += 1;
 			}
 			Destroy(col.gameObject);
 		}
 	}
+    public int Get_current_capacity(string key)
+    {
+        return inventory_player[key].Current_capacity;
+    }
+    public void RemoveItem(string key){
 
-	private bool is_inventory(string tag) {
-		return (tag == bomb.tag || tag == fire.tag || tag == roller.tag)?true:false;
-	}
+        if (inventory_player[key].Current_capacity > 0) {
+            inventory_player[key].Current_capacity -= 1;
+        }
+        if (key == "inventory_life" && inventory_player[key].Current_capacity == 0)
+        {
+            GetComponent<Player_controller>().Death();
+        }
+    }
 
 }

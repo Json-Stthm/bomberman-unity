@@ -8,6 +8,7 @@ TagManager:
   - inventory_bomb
   - inventory_fire
   - inventory_roller
+  - inventory_life
   layers:
   - Default
   - TransparentFX

@@ -14,6 +14,7 @@ public class SpawnPlayer : MonoBehaviour {
             {
                 GameObject player = (GameObject)Instantiate(player_prefab, spawn[i].position, Quaternion.identity);
                 player.GetComponent<Player_controller>().PlayerID = i + 1;
+                player.GetComponent<Player_controller>().SetColor();
             }
         }
 	}
