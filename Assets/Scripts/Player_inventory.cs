@@ -49,7 +49,8 @@ public class Player_inventory : MonoBehaviour {
         if (inventory_player[key].Current_capacity > 0) {
             inventory_player[key].Current_capacity -= 1;
         }
-        if (key == "inventory_life") {
+        if (key == "inventory_life" && inventory_player[key].Current_capacity == 0)
+        {
             GetComponent<Player_controller>().Death();
         }
     }

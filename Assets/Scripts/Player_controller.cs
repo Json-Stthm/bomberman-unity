@@ -75,11 +75,13 @@ public class Player_controller : MonoBehaviour {
     /*********************************************/
     public void Death()
     {
-        death = true;
-        GameObject.Find("Game_info").GetComponent<GameInfo>().DeathPlayer(playerID);
-        GameObject death_obj = (GameObject) Instantiate(deathPrefab, transform.position + new Vector3(0, 2.5f, 0), Quaternion.identity);
-        death_obj.transform.SetParent(transform);
-        Invoke("Repop", 0.5f);
+        if (!death) {
+            death = true;
+            GameObject.Find("Game_info").GetComponent<GameInfo>().DeathPlayer(playerID);
+            GameObject death_obj = (GameObject)Instantiate(deathPrefab, transform.position + new Vector3(0, 2.5f, 0), Quaternion.identity);
+            death_obj.transform.SetParent(transform);
+            Invoke("Repop", 0.5f);
+        }
     }
 
     private void Repop() {
