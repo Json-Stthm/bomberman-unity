@@ -5,9 +5,10 @@ public class StartLevel : MonoBehaviour {
 
 	// Use this for initialization
 	void Update () {
-
-        if (Input.GetAxis("Start") != 0) {
+        if (Input.GetAxis("Start") != 0)
+        {
             Application.LoadLevel(1);
+            GameObject.Find("Game_info").GetComponent<GameInfo>().PlayerIDS();
         }
 	}
 }
