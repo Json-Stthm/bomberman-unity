@@ -6,6 +6,7 @@ public class Player_controller : MonoBehaviour {
     //Player_controller variables
 	public  GameObject  bombPrefab;
     public  GameObject  deathPrefab;
+    public  Color[]     PlayerColors;
 	private bool        canDrop = true;
 	private int         nbBombs = 0;
 	private int         playerID = 1;
@@ -14,7 +15,7 @@ public class Player_controller : MonoBehaviour {
     public  float       speed = 3f;
     private Vector3     movement;
     private Animator    anim;
-    private Rigidbody   playerRigidbody;  
+    private Rigidbody   playerRigidbody;
 
     /*********************************************/
     /************** PLAYER MOVEMENT **************/
@@ -34,6 +35,10 @@ public class Player_controller : MonoBehaviour {
         Move(h, v);
         // Animate the player.
         Animating(h, v);
+    }
+    public void SetColor() {
+        transform.GetChild(0).GetChild(0).GetComponent<Renderer>().materials[3].color = PlayerColors[playerID - 1];
+        transform.GetChild(0).GetChild(1).GetComponent<Renderer>().materials[1].color = PlayerColors[playerID - 1];
     }
     void Move(float h, float v)
     {
