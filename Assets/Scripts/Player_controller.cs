@@ -73,7 +73,7 @@ public class Player_controller : MonoBehaviour {
 		if (!death && Input.GetAxis ("Fire_P" + playerID.ToString()) != 0f && canDrop && nbBombs < GetComponent<Player_inventory>().Get_current_capacity("inventory_bomb")) {
 			nbBombs++;
 			GameObject bomb = (GameObject) Instantiate (bombPrefab, transform.position + new Vector3 (0, 0.3f, 0), transform.rotation);
-			bomb.GetComponent<Bomb>().Initialize(gameObject);
+            bomb.GetComponent<Bomb>().DropPlayer = gameObject;
 		}
 	}
     /*********************************************/

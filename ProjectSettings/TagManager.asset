@@ -9,6 +9,7 @@ TagManager:
   - inventory_fire
   - inventory_roller
   - inventory_life
+  - Ground
   layers:
   - Default
   - TransparentFX
