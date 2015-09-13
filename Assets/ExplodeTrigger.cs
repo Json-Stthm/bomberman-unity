@@ -27,5 +27,8 @@ public class ExplodeTrigger : MonoBehaviour {
         if (col.tag == "Player") {
             col.GetComponent<Player_inventory>().RemoveItem("inventory_life");
         }
+        else if (col.tag == "Bomb") {
+            col.GetComponent<Bomb>().Explode();
+        }
     }
 }

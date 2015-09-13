@@ -49,7 +49,7 @@ public class Bomb : MonoBehaviour {
 		}
 	}
 
-	void Explode(){
+	public void Explode(){
 		// launch particle system
 		GameObject explosionInstance = (GameObject) Instantiate (explosionParticle, transform.position, explosionParticle.transform.rotation);
 		Destroy (gameObject);
